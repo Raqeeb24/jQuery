@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Raqeeb Mohamed Azhar">
+    <title>Audio</title>
+
+    <!-- Bootstrap and JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap-5.2.0-dist/bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.2.0-dist/bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.0-dist/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+
+
+    <!-- Custom styles for this template -->
+    <link href="grid.css" rel="stylesheet">
+
+    <script>
+		$(document).ready(function(){
+			document.onkeydown = function(event) {
+				if (event.keyCode == 49) {
+					playSound("musik/numberOne.mp3");
+				} else if(event.keyCode == 50) {
+					playSound("musik/numberTwo.mp3");
+				} else if(event.keyCode == 51) {
+					playSound("musik/numberThree.mp3");
+				} else if(event.keyCode == 38) {
+					playSound("musik/moveUp.mp3");
+				} else if(event.keyCode == 40) {
+					playSound("musik/moveDown.mp3");
+				} else if(event.keyCode == 37) {
+					playSound("musik/left.mp3");
+				} else if(event.keyCode == 39) {
+					playSound("musik/right.mp3");
+				}
+			}
+		});
+		
+		function playSound(url){
+			  var audio = document.createElement('audio');
+			  audio.style.display = "none";
+			  audio.src = url;
+			  audio.autoplay = true;
+			  audio.onended = function(){
+				audio.remove() //Remove when played.
+			  };
+			  document.body.appendChild(audio);
+		}
+	</script>
+</head>
+
+<body class="container-fluid">
+    <header class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="Index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Jquery.html">JQuery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Mulitmedia.html">Multimedia</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Weitere Themen
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a class="dropdown-item" href="Audio.html">Audio</a></li>
+                                <li><a class="dropdown-item" href="Bild.html">Bild</a></li>
+                                <li><a class="dropdown-item" href="Video.html">Video</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="row">
+    <p class="lead">Press on your keyboard</p>
+     <p>1, 2, 3, Up, Down, Left, Right</p>
+    </main>
+    <footer class="row">
+    </footer>
+</body>
+
+</html>
